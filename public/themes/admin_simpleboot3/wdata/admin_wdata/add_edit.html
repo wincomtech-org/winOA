@@ -1,0 +1,105 @@
+<div class="col-md-9">
+    <table class="table table-bordered">
+        <tr>
+            <th width="100">网站类型</th>
+            <td>
+                <select class="form-control" style="width:240px;" name="type">
+                    <option value="0">--请选择--</option>
+                    <foreach name="typeV" item="vo">
+                        <option value="{$vo}">{$vo}</option>
+                    </foreach>
+                </select>
+            </td>
+            <th width="100">网站名称<span class="form-required">*</span></th>
+            <td>
+                <input class="form-control" type="text" name="name" required value="{$name|default='--'}" placeholder="请输入名称" />
+            </td>
+        </tr>
+
+        <tr>
+            <th width="100">域名</th>
+            <td>
+                <textarea class="form-control" style="height:80px;" required name="url">{$url|default='http://'}</textarea>
+                <p class="help-block">如果不带协议，则归为 wincomtech.cn 的。多个域名请以||隔开。</p>
+            </td>
+            <th>后台地址</th>
+            <td>
+                <input class="form-control" type="text" name="admin_url" value="{$admin_url|default='http://'}" />
+                <p class="help-block">如果不带协议，则归为 wincomtech.cn 的。</p>
+            </td>
+        </tr>
+        <tr>
+            <th>测试账号</th>
+            <td>
+                <input class="form-control" type="text" name="account" value="{$account|default='--'}" />
+                <p class="help-block">前台测试账号</p>
+            </td>
+            <th>后台账号</th>
+            <td>
+                <input class="form-control" type="text" name="admin_account" value="{$admin_account|default='--'}" />
+                <p class="help-block">后台管理员账号</p>
+            </td>
+        </tr>
+        <tr>
+            <th>开发路径</th>
+            <td>
+                <input class="form-control" type="text" name="dev" value="{$dev|default='--'}" />
+                <p class="help-block">绝对路径：/home/apps/……</p>
+            </td>
+            <th>配置路径</th>
+            <td>
+                <input class="form-control" type="text" name="dev_ini" value="{$dev_ini|default='--'}" />
+                <p class="help-block">绝对路径：/usr/local/nginx/conf/vhosts/……</p>
+            </td>
+        </tr>
+
+        <tr>
+            <th>数据库名</th>
+            <td>
+                <input class="form-control" type="text" name="db" value="{$db|default='--'}" />
+            </td>
+            <th>配置文件</th>
+            <td>
+                <input class="form-control" type="text" name="db_ini" value="{$db_ini|default='--'}" />
+                <p class="help-block">数据库配置文件位置</p>
+            </td>
+        </tr>
+    </table>
+
+    <table class="table table-bordered">
+
+        <tr>
+            <th>备注</th>
+            <td>
+                <textarea class="form-control" style="height:80px;" name="remark">{$remark|default='--'}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>历史记录</th>
+            <td>
+                <script type="text/plain" id="content" name="history">{$history|default='--'}</script>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-3">
+    <table class="table table-bordered">
+        <tr><th>创建时间</th></tr>
+        <tr>
+            <td><input class="form-control" type="text" name="create_time" value="{$create_time?date('Y-m-d',$create_time):date('Y-m-d')}"></td>
+        </tr>
+
+        <tr>
+            <th><b>状态</b></th>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <select class="form-control" name="status">
+                        {$statusV|default='--'}
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
