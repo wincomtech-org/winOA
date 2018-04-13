@@ -7,5 +7,6 @@ composer.lock
 /api
 /public/api
 /public/assets/dist
+/public/index.php
 /node_modules
 *.zip
