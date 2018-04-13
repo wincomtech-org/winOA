@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2018-04-04 18:09:18
+Date: 2018-04-13 15:32:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,7 +41,7 @@ CREATE TABLE `cmf_admin_menu` (
 -- ----------------------------
 -- Records of cmf_admin_menu
 -- ----------------------------
-INSERT INTO `cmf_admin_menu` VALUES ('1', '0', '0', '1', '20', 'admin', 'Plugin', 'default', '', '插件中心', 'cloud', '插件中心');
+INSERT INTO `cmf_admin_menu` VALUES ('1', '0', '0', '1', '30', 'admin', 'Plugin', 'default', '', '插件中心', 'cloud', '插件中心');
 INSERT INTO `cmf_admin_menu` VALUES ('2', '1', '1', '1', '10000', 'admin', 'Hook', 'index', '', '钩子管理', '', '钩子管理');
 INSERT INTO `cmf_admin_menu` VALUES ('3', '2', '1', '0', '10000', 'admin', 'Hook', 'plugins', '', '钩子插件管理', '', '钩子插件管理');
 INSERT INTO `cmf_admin_menu` VALUES ('4', '2', '2', '0', '10000', 'admin', 'Hook', 'pluginListOrder', '', '钩子插件排序', '', '钩子插件排序');
@@ -160,7 +160,7 @@ INSERT INTO `cmf_admin_menu` VALUES ('116', '110', '2', '0', '10000', 'admin', '
 INSERT INTO `cmf_admin_menu` VALUES ('117', '110', '2', '0', '10000', 'admin', 'User', 'delete', '', '管理员删除', '', '管理员删除');
 INSERT INTO `cmf_admin_menu` VALUES ('118', '110', '2', '0', '10000', 'admin', 'User', 'ban', '', '停用管理员', '', '停用管理员');
 INSERT INTO `cmf_admin_menu` VALUES ('119', '110', '2', '0', '10000', 'admin', 'User', 'cancelBan', '', '启用管理员', '', '启用管理员');
-INSERT INTO `cmf_admin_menu` VALUES ('120', '0', '0', '1', '30', 'portal', 'AdminIndex', 'default', '', '门户管理', 'th', '门户管理');
+INSERT INTO `cmf_admin_menu` VALUES ('120', '0', '0', '1', '20', 'portal', 'AdminIndex', 'default', '', '门户管理', 'th', '门户管理');
 INSERT INTO `cmf_admin_menu` VALUES ('121', '120', '1', '1', '10000', 'portal', 'AdminArticle', 'index', '', '文章管理', '', '文章列表');
 INSERT INTO `cmf_admin_menu` VALUES ('122', '121', '1', '0', '10000', 'portal', 'AdminArticle', 'add', '', '添加文章', '', '添加文章');
 INSERT INTO `cmf_admin_menu` VALUES ('123', '121', '2', '0', '10000', 'portal', 'AdminArticle', 'addPost', '', '添加文章提交', '', '添加文章提交');
@@ -202,7 +202,7 @@ INSERT INTO `cmf_admin_menu` VALUES ('158', '6', '1', '1', '10000', 'user', 'Adm
 INSERT INTO `cmf_admin_menu` VALUES ('159', '158', '1', '0', '10000', 'user', 'AdminUserAction', 'edit', '', '编辑用户操作', '', '编辑用户操作');
 INSERT INTO `cmf_admin_menu` VALUES ('160', '158', '2', '0', '10000', 'user', 'AdminUserAction', 'editPost', '', '编辑用户操作提交', '', '编辑用户操作提交');
 INSERT INTO `cmf_admin_menu` VALUES ('161', '158', '1', '0', '10000', 'user', 'AdminUserAction', 'sync', '', '同步用户操作', '', '同步用户操作');
-INSERT INTO `cmf_admin_menu` VALUES ('162', '0', '0', '1', '10000', 'wdata', 'AdminWdata', 'default', '', '网站资源', '', '网站资源管理');
+INSERT INTO `cmf_admin_menu` VALUES ('162', '0', '0', '1', '5', 'wdata', 'AdminWdata', 'default', '', '网站资源', '', '网站资源管理');
 INSERT INTO `cmf_admin_menu` VALUES ('163', '162', '1', '1', '10000', 'wdata', 'AdminWdata', 'index', '', '网站管理', '', '网站列表');
 INSERT INTO `cmf_admin_menu` VALUES ('164', '163', '1', '0', '10000', 'wdata', 'AdminWdata', 'add', '', '添加网站', '', '添加网站');
 INSERT INTO `cmf_admin_menu` VALUES ('165', '163', '2', '0', '10000', 'wdata', 'AdminWdata', 'addPost', '', '添加网站提交', '', '添加网站提交');
@@ -1018,7 +1018,7 @@ CREATE TABLE `cmf_user` (
 -- ----------------------------
 -- Records of cmf_user
 -- ----------------------------
-INSERT INTO `cmf_user` VALUES ('1', '1', '0', '0', '1522748543', '1', '1', '0.00', '1522728217', '1', 'win', '###f31f19f4d0f941ad26ad3a52dea6edf6', 'win', '531597796@qq.com', '', '', '', '127.0.0.1', '', '', null);
+INSERT INTO `cmf_user` VALUES ('1', '1', '0', '0', '1523603672', '2', '2', '0.00', '1522728217', '1', 'win', '###f31f19f4d0f941ad26ad3a52dea6edf6', 'win', '531597796@qq.com', '', '', '', '127.0.0.1', '', '', null);
 
 -- ----------------------------
 -- Table structure for cmf_user_action
@@ -1134,12 +1134,13 @@ CREATE TABLE `cmf_user_score_log` (
   `score` int(11) NOT NULL DEFAULT '0' COMMENT '更改积分，可以为负',
   `coin` int(11) NOT NULL DEFAULT '0' COMMENT '更改金币，可以为负',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='用户操作积分等奖励日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='用户操作积分等奖励日志表';
 
 -- ----------------------------
 -- Records of cmf_user_score_log
 -- ----------------------------
 INSERT INTO `cmf_user_score_log` VALUES ('1', '1', '1522748543', 'login', '1', '1');
+INSERT INTO `cmf_user_score_log` VALUES ('2', '1', '1523603672', 'login', '1', '1');
 
 -- ----------------------------
 -- Table structure for cmf_user_token
@@ -1200,14 +1201,77 @@ CREATE TABLE `cmf_wdata` (
   `status` tinyint(1) NOT NULL COMMENT '状态：0关闭 1正常 2？ 3未备案 4挂掉 5维护 10转移 ',
   `list_order` float unsigned NOT NULL DEFAULT '10000' COMMENT '排序：从小到大',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of cmf_wdata
 -- ----------------------------
-INSERT INTO `cmf_wdata` VALUES ('1', 'demo', '--', 'http://data.wincomtech.cn', 'http://', '--', '--', '--', '--', 'wdata', '--', '1522684800', '--', '', '1', '10000');
-INSERT INTO `cmf_wdata` VALUES ('6', '0', '--', 'http://', 'http://', '--', '--', '--', '--', '--', '--', '2018', '--', '&lt;p&gt;--&lt;/p&gt;', '1', '1');
-INSERT INTO `cmf_wdata` VALUES ('7', '0', '--', 'http://', 'http://', '--', '--', '--', '--', '--', '--', '2018', '--', '&lt;p&gt;--&lt;/p&gt;', '1', '10000');
-INSERT INTO `cmf_wdata` VALUES ('8', '0', '--', 'http://', 'http://', '--', '--', '--', '--', '--', '--', '2018', '--', '&lt;p&gt;--&lt;/p&gt;', '1', '10000');
-INSERT INTO `cmf_wdata` VALUES ('9', '0', '--', 'http://', 'http://', '--', '--', '--', '--', '--', '--', '2018', '--', '&lt;p&gt;--&lt;/p&gt;', '1', '10000');
-INSERT INTO `cmf_wdata` VALUES ('10', '0', '--', 'http://', 'http://', '--', '--', '--', '--', '--', '--', '2018', '--', '&lt;p&gt;sdwdw&lt;/p&gt;', '1', '10000');
+INSERT INTO `cmf_wdata` VALUES ('1', '', '华创数据', 'data', '', '[win:win@123]', '', '_demo/domain', '无限', '无限', '', '0', '', '无限\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('2', '', '演示专用', 'demo', '', '无限', '', '_demo', 'demo', '无限', '', '0', '', '无限\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('3', '', '华创官网', 'www', '', '[admin:123456]', '', '_demo/newwincomtech', 'demo/wincomtech.conf', 'newwincomtech', '', '0', '', '[demo]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('4', '', '华创旧官网', 'hczx', '', '', '', '_demo/huachuang', 'demo/wincomtech.conf', '', '', '0', '', '[demo]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('5', '', '安徽徽梦尚土特产', 'hcfarm', '', '[admin0:111111]', '', '_git/_zhc/zzfarm', 'git/zz.conf', 'zzfarm', '', '0', '', '[git]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('6', '', '华创单商户', 'hcsinglyshop', '', '[admin:123456]', '', '_demo/singlyshop', 'demo/shop.conf', 'singlyshop', '', '0', '', '[demo]--[后台:/index.php/admin/Index/index]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('7', '', '华创多商户', 'hcmoreshop', '', '[admin:admin123]', '', '_demo/moreshop', 'demo/shop.conf', 'moreshop', '', '0', '', '[demo]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('8', '', '华创微信', 'wechat', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('9', '', '微米CMS', 'cms', '', '[admin:admin]', '', '_demo/wmcms', 'demo/wmcms.conf', '', '', '0', '', '[demo]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('10', '', '产品站', 'hcpro', '', '[super:111111]', '', '_git/_zhc/wincomtech_org', 'git/hcpro.conf', 'hcpro', '', '0', '', '[git]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('11', '', '房产类网站', 'house^hchouse', '', '[admin:123456]', '', '_demo/house', 'demo/default.conf', 'house', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('12', '', '环球空调', 'hcac', '', '[admin:123456]', '', '_git/_sam/wincomtech_airco', 'git/wincomtech.conf', 'airco', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('13', '', '教育类网站', 'edu^hcedu', '', '[admin:123456]', '', '_demo/edu', 'demo/default.conf', 'edu', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('14', '', 'hms单商户', 'hmsdan', '', '[admin:123456]', '', '_wincomtech/hmsdan', 'wincomtech/hms.conf', 'hmsdan', '', '0', '', '[demo]--[后台:/index.php/admin/Index/index]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('15', '', 'hms多商户', 'hmsduo', '', '[admin:admin123]', '', '_wincomtech/hmsduo', 'wincomtech/hms.conf', 'hmsduo', '', '0', '', '[demo]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('16', '', '享篆官网', 'dd', '', '[admin:123456]', '', '_demo/xzdouphp', 'demo/xiangzhuan.conf', 'xz', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('17', '', '享篆新官网', 'www.sqq.group^xz', '', '[admin:123456]', '', '_demo/xznew', 'demo/xiangzhuan.conf', 'xznew', '', '0', '', 'douphp\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('18', '', '享篆商城', 'xzshop', '', '[admin:123456]', '', '_demo/xzshop', 'demo/xiangzhuan.conf【伪静态】', 'xiangzhuanshop', '', '0', '', '[demo]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('19', '', '享篆多商户商城', 'shop', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('20', '', '首饰海外商城', 'haiwai^www.souladdy.com', '', '', '', 'souladdy', 'vhost.souladdy.conf', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('21', '', 'O2O生活圈', 'o2o', '', '[admin:admin]', '', 'o2o', 'vhost.o2o.conf', 'o2o', '', '0', '', 'http://o2o.wincomtech.cn/admin\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('22', '', 'OA办公系统', 'oa', '', '[admin:123456]', '', '_demo/ibos', 'demo/oa.conf', 'ibos', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('23', '', '人才招聘', 'pyun', '', '[admin:123456]', '', '_demo/PHPYunOP', 'demo/phpyun.conf', 'pyun', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('24', '', '论坛', 'discuz.wowlothar.cn', '', '[admin:123456]\r\n[lothar:111111]', '', '_demo/discuz', 'demo/discuz.conf', 'discuz', '', '0', '', '备用服务器：[180.76.174.54|Administrator:huachaung@123]\r\n[mysql|root:hc@123|aijie]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('25', '', '幼儿园', 'youeryuan', '', '', '', 'youeryuan', 'vhost.youeryuan.conf', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('26', '', '伯艺木门', 'boyi', '', '[admin:123456]', '', '_pro/hfboyi', 'pro/hfboyi.conf', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('27', '', '华然家装', 'ajsj^www.ajsj.com.cn', '', '[admin:admin]', '', '_pro/huaran', 'pro/ajsj.conf【伪静态】', 'ajsj', '', '0', '', '[后台:admin.php]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('28', '', '驾考', 'jiakao', '', '', '', '_pro/jiakao', 'demo/jiakao.conf', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('29', '', '天丰文盲驾考', 'www.jktest.cn', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('30', '', 'KayTinas官网', 'dou^www.kaytinas.com', '', '[admin:123456]', '', '_pro/douphp', 'pro/kaytinas.conf', 'douphp', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('31', '', 'KayTinas凯蒂娜斯', 'tp^www.kaytinas.cn', '', '[admin:123456]', '', '_pro/tpshop', 'pro/kaytinas.conf', 'tpshop', '', '0', '', '[后台:index.php/admin]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('32', '', '谷风', 'www.gfshow.cn', '', '', '', '', '---', '', '', '0', '', '2016*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('33', '', '元来商贸', 'www.yuanlaigo.com', '', '', '', '_pro/yuanlai', 'pro/yuanlai.conf【挂】', '', '', '0', '', '2016*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('34', '', '酷爱大牌', 'www.kuaidapai.cn', '', 'admin888:zyy3066585', '', '/home/wwwroot/default/fxsc', '---', '[/usr/local/mysql/bin|root:Kad', '', '0', '', '2016*[118.178.94.86:80|root:Kadp#@186]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('35', '', '易实验（昂宁生物科技）', 'www.易实验.com', '', '[admin:admin8888]', '', '/data/wwwroot/default/angning', '/usr/local/nginx/conf/nginx.conf', '[/usr/local/mysql/bin]', '', '0', '', '2016*[139.196.104.132|root:ysy#3426]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('36', '', '百万点击', 'www.baiwandianji.com', '', '', '', '', '---', '', '', '0', '', '2016*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('37', '', '爱杰数据', 'aijie.wowlothar.cn', '', '[admin:123456]\r\n[13333333333:111111]', '', '_pro/aijie', 'pro/aijie.conf', 'aijie', '', '0', '', '2016*[180.76.174.54|Administrator:huachaung@123]\r\n[mysql|root:hc@123|aijie]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('38', '', '爱杰数据官网', 'data.ijshu.com', '', '', '', '', '---', '', '', '0', '', '2016*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('39', '', '爱杰官网', 'omg.ijshu.com', '', '', '', '', '---', '', '', '0', '', '2016*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('40', '', '908律师', 'lawyer^www.908lvshi.com^lawyer.wowlothar.cn', '', '[13333333333:111111]', '', '_pro/lawyer', 'pro/lawyer.conf【挂】', 'lawyer', '', '0', '', '2017*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('41', '', '阳光国际派遣', 'aa', '', '', '', '_pro/baokao', 'vhost.baokao.conf', '', '', '0', '', '2017*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('42', '', '阳光国际派遣官网', 'www.shihuahuijs.com', '', '[admin:123456]\r\n[13333333333:111111]', '', '/yjdata/www/www/baom', '---', '[mysql|root:hellochuck266214|b', '', '0', '', '2017*[182.254.132.52|root:hellochuck266214]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('43', '', '嗨电子', 'hielec', '', '[admin:123456][lothar:111111]', '', '_git/hielec', 'git/default.conf', 'hielec', '', '0', '', '2016*提现、外包\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('44', '', 'IC-YUN采购网', 'www.ic-yun.com', '', '', '', '/www/web/wp_icyun/public_html', '---', '[mysqli|icyun:icyun|db_icyun|u', '', '0', '', '[211.149.171.39|root:je6hkd2w]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('45', '', '成运官网', 'cy', '', '[admin:123456]', '', '_git/cy', 'git/cy.conf', 'cy', '', '0', '', '2017*中英文、权限管理、产品属性、\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('46', '', '成运配件站', 'cypro', '', '[admin:123456]', '', '_git/cy', 'git/cy.conf', 'cy', '', '0', '', '2017\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('47', '', '营销网站', 'marketing', '', '[admin:123456][133333333:123456]', '', '_git/marketing', 'git/marketing.conf', 'marketing', '', '0', '', '2017*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('48', '', '微步-大数据整合营销服务商', 'www.vbu.cn', '', '[admin:123456]', '', '[phpstudy]marketing', '---', 'marketing', '', '0', '', '2017*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('49', '', '多商户(昂奈玛特)', 'mpshop^www.onlmt.com', '', '[admin:admin123]', '', '_pro/mpshop', 'pro/mpshop.conf', 'mpshop', '', '0', '', '2017*[aliyun|sxc660226:sxc990229]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('50', '', '学校查询', 'schoolquery^www.hkecl.cn', '', '[admin:123456]', '', '_git/schoolquery', '_git/schoolquery.conf', '[mysql|root:root|schoolquery|u', '', '0', '', '2017*\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('51', '', '七约优品', 'youpin^www.58qyyp.cn', '', '[admin:123456]', '', '_pro/youpin', 'pro/youpin.conf', 'youpin', '', '0', '', '2017*仿享篆官网、\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('52', '', '大通车服（二手车）', 'www.datongchefu.cn', '', '[admin:123456]', '', '_git/used_car', 'git/used_car.conf', '[pdo|:|usedcar|utf8mb4]', '', '0', '', '2017*二手车、\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('53', '', '祖运网（商家点评）', 'www.zypjw.cn^zypjw', '', '[super:111111][admin:123456]', '', '_git/_zhc/zzcomment', 'git/zz.conf', 'zzcomment', '', '0', '', '201710*竞价排名\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('54', '', '中阔溯源', 'www.zhongkuosuyuan.com^demo2', '', '[admin:123456]', '', '_pro/suyuan', 'pro/suyuan.conf', 'suyuan', '', '0', '', '201710*中阔溯源（北京）科技有限公司\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('55', '', '鑫锐诚毅数字科技', 'www.vrmajor.com', '', '[admin:123456]', '', '[phpstudy]vrmajor', '---', '[root:root007|vrmajor]', '', '0', '', '201711*[118.190.154.182|Administrator:Li18611030098]*科技企业官网：北京鑫锐诚毅数字科技有限公司\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('56', '', '美味餐厅', 'pzs', '', '--', '', '--', '--', '--', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('57', '', '仓库管理系统', 'hcstore', '', '[admin0:111111]', '', '_git/_zhc/zzstore', 'git/zz.conf', 'zzstore', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('58', '', '借条平台', 'zzpaper^zzpaper.acx1.cn^www.8111386.cn', '', '[admin0:123456]', '', '_git/_zhc/zzpaper/public', 'git/zz.conf【未备案】', 'zzpaper', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('59', '', '借款平台', 'zzloan^zzloan.acx1.cn', '', '[:]', '', '_git/_zhc/zzloan/public', 'git/zz.conf【未备案】', 'zzloan', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('60', '', '娄底智达', 'zzloudi', '', '[super:123456]', '', '_git/_zhc/zzloudi/public', 'git/zz.conf', 'zzloudi', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('61', '', '个股期权', 'zzoption', '', '[super:123456]', '', '_git/_zhc/zzoption/public', 'git/zz.conf', 'zzoption', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('62', '', '备用2(中阔溯源)', 'demo2', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('63', '', '备用3', 'demo3', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('64', '', '备用4', 'demo4', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('65', '', '备用5', 'demo5', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('66', '', '备用6', 'demo6', '', '\r\n', '', '', '', '', '', '0', '', '', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('67', '', '服务器信息', 'http://106.14.74.155/i.php', '', '', '', '', '', '', '', '0', '', '\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('68', '', '豆壳官版全套', 'douphp.wowlothar.cn/admin', '', '[admin:123456]', '', '_demo/douphp_all', 'demo/douphp.conf', 'douphpall', '', '0', '', '[云账户|keven518@163.com]\r\n', '0', '10000');
+INSERT INTO `cmf_wdata` VALUES ('69', '', '百度AI开发者大会', 'create.baidu.com', '', '', '', '', '', '', '', '0', '', '', '0', '10000');
