@@ -8,6 +8,20 @@ use think\Model;
 */
 class WdataModel extends Model
 {
+    protected $type = [
+        'more' => 'array',
+        // 'url' => 'array',
+    ];
+
+    // 开启自动写入时间戳字段
+    protected $autoWriteTimestamp = true;
+
+    // published_time 自动完成
+    public function setPublishedTimeAttr($value)
+    {
+        return strtotime($value);
+    }
+
     /**
      * history 自动转化
      * @param $value
@@ -21,16 +35,20 @@ class WdataModel extends Model
     {
         return cmf_replace_content_file_url(htmlspecialchars_decode($value));
     }
+
     /**
      * url 域名转化
      * @param [type] $value [description]
      */
-    // public function setUrlAttr($value)
-    // {
-    //     return implode('||',$value);
-    // }
-    // public function getUrlAttr($value)
-    // {
-    //     return explode('||',$value);
-    // }
+    public function setUrlAttr($value)
+    {
+        return preg_replace('/[\\r\\n]/is', '', $value);
+        // return implode('|',$value);
+    }
+    public function getUrlAttr($value)
+    {
+        return explode('|',$value);
+    }
+
+
 }

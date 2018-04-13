@@ -35,9 +35,9 @@ class AdminWdataController extends AdminBaseController
      */
     public function index()
     {
+        // Db::execute("truncate cmf_wdata;");
         $scModel = new WdataModel();
         $list = $scModel->order('list_order,id DESC')->paginate(20);
-
         $this->assign('list', $list->items());
         // $list->appends();
         $this->assign('pager', $list->render());
@@ -116,6 +116,11 @@ class AdminWdataController extends AdminBaseController
             } else {
                 $post = $post->toArray();
             }
+            $url = '';
+            foreach ($post['url'] as $u) {
+                $url .= $u.'|'.PHP_EOL;
+            }
+            $post['url'] = $url;
             $statusV = lothar_statusOptions($post['status']);
             $this->assign($post);
             $this->assign('statusV', $statusV);

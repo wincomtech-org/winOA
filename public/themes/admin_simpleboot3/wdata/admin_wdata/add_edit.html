@@ -19,8 +19,8 @@
         <tr>
             <th width="100">域名</th>
             <td>
-                <textarea class="form-control" style="height:80px;" required name="url">{$url|default='http://'}</textarea>
-                <p class="help-block">如果不带协议，则归为 wincomtech.cn 的。多个域名请以||隔开。</p>
+                <textarea class="form-control" style="height:80px;" placeholder="http://" required name="url">{$url|default=''}</textarea>
+                <p class="help-block">如果不带协议，则归为 wincomtech.cn 的。多个域名请以|隔开。</p>
             </td>
             <th>后台地址</th>
             <td>

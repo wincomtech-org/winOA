@@ -1,49 +1,63 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>数据中心 - {$site_info.site_name|default=''} </title>
-    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}" />
+    <title>演示基地</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
     <meta name="description" content="{$site_info.site_seo_description|default=''}">
-    <include file="public@head" />
-    <hook name="before_head_end" />
+    <include file="public@head"/>
+
+    <style type="text/css">
+        .clear{clear: both;}
+        th,td{padding-right:30px;}
+        tbody td:hover{background-color:orange;}
+        tbody tr:nth-of-type(odd){background-color:#ccc;}
+        tbody tr:nth-of-type(even){background-color:rgba(240,240,240,.3);}
+        ul{list-style:none;float:right;margin-right:10%;}
+        ul li{float: left;margin-right:3px;text-align:center;background-color:#CCC;}
+        ul li a{text-decoration:none;display:block;width:40px;height:35px;line-height:35px;padding:2px;color:#000}
+        ul li a:hover{background-color:yellow;color:#F00;font-size:26px;font-weight: bold;}
+    </style>
 </head>
+<body>
+<div>
+    <div class="clear"></div>
+    <table>
+        <thead>
+            <tr>
+                <!-- 网站名称,域名,开发路径,配置文件,数据库,测试账号,更多 -->
+                <th><a href="javascript:void(0);">网站名称</a></th>
+                <th><a href="javascript:void(0);">域名</a></th>
+                <th><a href="javascript:void(0);">开发路径</a></th>
+                <th><a href="javascript:void(0);">配置文件</a></th>
+                <th><a href="javascript:void(0);">数据库</a></th>
+                <th><a href="javascript:void(0);">测试账号</a></th>
+                <th><a href="javascript:void(0);">更多</a></th>
+            </tr>
+        </thead>
 
-<body class="">
-    <include file="public@nav" />
-    <div class="container tc-main">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="main-title">
-                    <!-- <h3>'{$keyword|default=''}' 搜索结果 </h3> -->
-                </div>
-
-                <foreach name="list" item="vo">
-                <div class="list-boxes">
-                    <h2>
-                        <a href="{$vo.url}">{$vo.name}</a>
-                    </h2>
-                    <p>{$vo.account}</p>
-                    <div>
-                        <div class="pull-left">
-                            <div class="list-actions">
-                                <a href="javascript:void(0);"><i class="fa fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <a class="btn btn-warning btn-sm pull-right" href="javascript:parent.openIframeDialog('{:url('index/detail')}','网站详情',{width:'600px',height:'400px'});">查看更多</a>
-                    </div>
-                </div>
-                </foreach>
-
-                <div class="pagination">
-                    {$pager|default=''}
-                </div>
-            </div>
-        </div>
-        <include file="public@footer" />
+        <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.name}</td>
+                    <td>
+                        <foreach name="vo.url" item="u">
+                        <a target="_blank" href="{$u}">{$u|mb_substr=0,25,'utf-8'|default='--'}</a><br>
+                        </foreach>
+                    </td>
+                    <td>{$vo.dev}</td>
+                    <td>{$vo.dev_ini}</td>
+                    <td>{$vo.db}</td>
+                    <td>{$vo.account}{$vo.admin_account}</td>
+                    <td><a href="javascript:void(0);">查看</a></td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+    <div>
+        <ul class="pagination">{$pager|default=''}</ul>
     </div>
-    <include file="public@scripts" />
-    <hook name="before_body_end" />
+    <div class="clear"></div>
+</div>
 </body>
-
 </html>

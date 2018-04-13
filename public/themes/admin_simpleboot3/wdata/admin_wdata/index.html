@@ -28,12 +28,14 @@
                         <td>{$vo.id}</td>
                         <td><a>{$vo.name}</a></td>
                         <td>
-                            <a href="{$vo.url}">{$vo.url|mb_substr=0,25,'utf-8'|default='--'}</a>
+                            <foreach name="vo.url" item="u">
+                            <a target="_blank" href="{$u}">{$u|mb_substr=0,25,'utf-8'|default='--'}</a><br>
+                            </foreach>
                         </td>
                         <td>{$vo.account}</td>
                         <td>{$vo.admin_account}</td>
                         <td>
-                            <a href="{$vo.url}">{$vo.admin_url|mb_substr=0,25,'utf-8'|default='--'}</a>
+                            <a target="_blank" href="{$vo.admin_url}">{$vo.admin_url|mb_substr=0,25,'utf-8'|default='--'}</a>
                         </td>
                         <td>{$vo.db}</td>
                         <td>{:date('Y-m-d',$vo.create_time)}</td>
