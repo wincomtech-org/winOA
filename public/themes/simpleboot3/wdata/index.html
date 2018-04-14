@@ -2,21 +2,23 @@
 <html lang="en">
 
 <head>
-    <title>演示基地</title>
+    <title>演示基地 - {$site_info.site_name|default=''}</title>
     <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}" />
     <meta name="description" content="{$site_info.site_seo_description|default=''}">
     <include file="public@head" />
     <style type="text/css">
-        .control_list{width: 98%;margin: 0 auto;}
+        .nobody{padding:0px;background-color:#F00}
         .pager_control{float: left;}
+        .control_list{width: 98%;margin: 0 auto;}
 
         tbody td:hover{background-color:orange;}
         tbody tr:nth-of-type(odd){background-color:#ccc;}
-        tbody tr:nth-of-type(even){background-color:rgba(240,240,240,.3);}
+        tbody tr:nth-of-type(even){background-color:rgba(240,240,240,1);}
+        .control_list th,.control_list td{padding:5px;}
     </style>
 </head>
 
-<body>
+<body class="nobody">
     <div>
         <div class="control_list">
             <table>
