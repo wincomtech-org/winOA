@@ -27,15 +27,17 @@ class CaptchaController
             // 验证码字体大小(px)
             'fontSize' => 25,
             // 验证码字体大小(px)
-            'useCurve' => true,
+            'useCurve' => false,
             // 是否画混淆曲线
-            'useNoise' => true,
+            'useNoise' => false,
             // 验证码图片高度
             'imageH'   => 0,
             // 验证码图片宽度
             'imageW'   => 0,
             // 验证码位数
             'length'   => 4,
+            // 字体，默认为空。如果设置则只能设置一个
+            'fontttf'  => '4.ttf',
             // 背景颜色
             'bg'       => [243, 251, 254],
         ];
