@@ -5,6 +5,10 @@
 .idea
 composer.lock
 /api
+/data/backup
+/data/conf
+!/data/conf/config.php
+/data/runtime
 /public/api
 /public/assets/dist
 /public/index.php
