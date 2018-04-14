@@ -16,6 +16,14 @@ class WdataModel extends Model
     // 开启自动写入时间戳字段
     protected $autoWriteTimestamp = true;
 
+    public function setCreateTimeAttr($value)
+    {
+        return strtotime($value);
+    }
+    public function setUpdateTimeAttr($value)
+    {
+        return strtotime($value);
+    }
     // published_time 自动完成
     public function setPublishedTimeAttr($value)
     {
