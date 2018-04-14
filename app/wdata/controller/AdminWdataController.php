@@ -37,7 +37,7 @@ class AdminWdataController extends AdminBaseController
     {
         // Db::execute("truncate cmf_wdata;");
         $scModel = new WdataModel();
-        $list = $scModel->order('list_order,id DESC')->paginate(20);
+        $list = $scModel->order('list_order,id DESC')->paginate(16);
         $this->assign('list', $list->items());
         // $list->appends();
         $this->assign('pager', $list->render());

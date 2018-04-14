@@ -7,16 +7,12 @@
     <meta name="description" content="{$site_info.site_seo_description|default=''}">
     <include file="public@head" />
     <style type="text/css">
-        .control_list{margin-left: 1%;}
-        .clear{clear:both;}
-        th,td{padding-right:30px;}
+        .control_list{width: 98%;margin: 0 auto;}
+        .pager_control{float: left;}
+
         tbody td:hover{background-color:orange;}
         tbody tr:nth-of-type(odd){background-color:#ccc;}
         tbody tr:nth-of-type(even){background-color:rgba(240,240,240,.3);}
-        ul{list-style:none;float:right;margin-right:10%;}
-        ul li{float:left;margin-right:3px;text-align:center;background-color:#CCC;}
-        ul li a{text-decoration:none;display:block;width:40px;height:35px;line-height:35px;padding:2px;color:#000}
-        ul li a:hover{background-color:yellow;color:#F00;font-size:26px;font-weight:bold;}
     </style>
 </head>
 
@@ -56,10 +52,10 @@
                 </tbody>
             </table>
         </div>
-        <div>
+        <div class="pager_control">
             <ul class="pagination">{$pager|default=''}</ul>
         </div>
-        <div class="clear"></div>
+        <div class="clearfix"></div>
     </div>
 </body>
 
