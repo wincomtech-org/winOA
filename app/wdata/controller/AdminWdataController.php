@@ -60,6 +60,7 @@ class AdminWdataController extends AdminBaseController
      */
     public function add()
     {
+        $this->assign('type', '');
         $this->assign('typeV', config('wdata_type'));
         $this->assign('statusV', lothar_statusOptions(1));
         return $this->fetch();

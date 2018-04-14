@@ -6,7 +6,7 @@
                 <select class="form-control" style="width:240px;" name="type">
                     <option value="0">--请选择--</option>
                     <foreach name="typeV" item="vo">
-                        <option value="{$vo}">{$vo}</option>
+                        <option {$type==$vo?='selected'} value="{$vo}">{$vo}</option>
                     </foreach>
                 </select>
             </td>
