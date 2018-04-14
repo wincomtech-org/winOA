@@ -117,10 +117,11 @@ class AdminWdataController extends AdminBaseController
                 $post = $post->toArray();
             }
             $url = '';
+            $buff = '|'.PHP_EOL;
             foreach ($post['url'] as $u) {
-                $url .= $u.'|'.PHP_EOL;
+                $url .= $u.$buff;
             }
-            $post['url'] = $url;
+            $post['url'] = trim($url,$buff);
             $statusV = lothar_statusOptions($post['status']);
             $this->assign($post);
             $this->assign('statusV', $statusV);
