@@ -38,7 +38,7 @@
                             <td>{$vo.name}</td>
                             <td>
                                 <foreach name="vo.url" item="u">
-                                    <a target="_blank" href="{$u}">{$u|mb_substr=0,25,'utf-8'|default='--'}</a>
+                                    <a target="_blank" href="http://{$u}">{$u|mb_substr=0,25,'utf-8'|default='--'}</a>
                                     <br>
                                 </foreach>
                             </td>
