@@ -15,7 +15,7 @@ class IndexController extends UserBaseController
         $scModel = new WdataModel;
 
         $where = [];
-        $list = $scModel->field('name,url,dev,dev_ini,db,account,admin_account')->where($where)->paginate(25);
+        $list = $scModel->field('name,url,dev,dev_ini,db,account,admin_account')->where($where)->order('list_order')->paginate(25);
 
         $this->assign('list',$list->items());
         $this->assign('pager',$list->appends($param)->render());
