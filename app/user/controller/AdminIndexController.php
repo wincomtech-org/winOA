@@ -61,6 +61,8 @@ class AdminIndexController extends AdminBaseController
 
         if (!empty($request['uid'])) {
             $where['id'] = intval($request['uid']);
+        } else {
+            $where['id'] = ['neq',4];
         }
         $keywordComplex = [];
         if (!empty($request['keyword'])) {

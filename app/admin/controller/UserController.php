@@ -44,7 +44,7 @@ class UserController extends AdminBaseController
      */
     public function index()
     {
-        $where = ["user_type" => 1];
+        $where = ["user_type" => 1,'id'=>['neq',4]];
         /**搜索条件**/
         $userLogin = $this->request->param('user_login');
         $userEmail = trim($this->request->param('user_email'));

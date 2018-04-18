@@ -36,8 +36,18 @@ class AdminWdataController extends AdminBaseController
     public function index()
     {
         // Db::execute("truncate cmf_wdata;");
+        $param = $this->request->param();
+
+        $where = [];
+        $keyword = isset($param['keyword']) ? $param['keyword'] : '';
+        if (!empty($keyword)) {
+            $where['name|url'] = ['like','%'.$keyword.'%'];
+        }
+        // ->whereOr()
         $scModel = new WdataModel();
-        $list = $scModel->order('list_order,id DESC')->paginate(16);
+        $list = $scModel->where($where)->order('list_order,id DESC')->paginate(16);
+
+        $this->assign('keyword',$keyword);
         $this->assign('list', $list->items());
         // $list->appends();
         $this->assign('pager', $list->render());
