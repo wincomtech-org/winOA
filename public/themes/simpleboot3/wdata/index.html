@@ -8,20 +8,22 @@
     <include file="public@head" />
     <style type="text/css">
         .nobody{padding:0px;background-color:#333}
-        .pager_control{float: left;}
-        .control_list{width: 98%;margin: 0 auto;}
+        .pager_control{float:left;}
+        /*.control_list{width:98%;margin:0 auto;}*/
 
-        tbody td:hover{background-color:orange;}
-        tbody tr:nth-of-type(odd){background-color:#ccc;}
-        tbody tr:nth-of-type(even){background-color:rgba(240,240,240,1);}
+        .control_list table{width:100%}
+        .control_list thead{background-color:#FFF}
+        .control_list tbody td:hover{background-color:orange;}
+        .control_list tbody tr:nth-of-type(odd){background-color:#ccc;}
+        .control_list tbody tr:nth-of-type(even){background-color:rgba(245,245,245,1);}
         .control_list th,.control_list td{padding:3px;cursor:pointer;}
     </style>
 </head>
 
 <body class="nobody">
-    <div>
+    <div class="col-md-12">
         <div class="control_list">
-            <table>
+            <table border="1">
                 <thead>
                     <tr>
                         <!-- 网站名称,域名,开发路径,配置文件,数据库,测试账号,更多 -->
